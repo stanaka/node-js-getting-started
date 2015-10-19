@@ -15,4 +15,5 @@ echo >> /app/mackerel-agent/mackerel-agent.conf
 trap '/app/mackerel-agent/mackerel-agent retire -conf /app/mackerel-agent/mackerel-agent.conf -force' TERM
 cat /app/mackerel-agent/mackerel-agent.conf
 /app/mackerel-agent/mackerel-agent -conf /app/mackerel-agent/mackerel-agent.conf -v &
+
 node index.js
