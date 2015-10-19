@@ -6,14 +6,14 @@ root = "/app/mackerel-agent"
 verbose = true
 apikey = "9pPrfeGDpAy75pUrC3NYii3YSH8vZ2CGu5L7sWrBuUtV"
 
+roles = [ "app:dyno" ]
+
 [host_status]
 on_start = "working"
 on_stop  = "poweroff"
 EOF
 SCRIPT
-echo >> /app/mackerel-agent/mackerel-agent.conf
 trap '/app/mackerel-agent/mackerel-agent retire -conf /app/mackerel-agent/mackerel-agent.conf -force' TERM
-cat /app/mackerel-agent/mackerel-agent.conf
 /app/mackerel-agent/mackerel-agent -conf /app/mackerel-agent/mackerel-agent.conf -v &
 
 node index.js
