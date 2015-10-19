@@ -5,6 +5,10 @@ pidfile = "/app/mackerel-agent/mackerel-agent.pid"
 root = "/app/mackerel-agent"
 verbose = true
 apikey = "9pPrfeGDpAy75pUrC3NYii3YSH8vZ2CGu5L7sWrBuUtV"
+
+[host_status]
+on_start = "working"
+on_stop  = "poweroff"
 EOF
 SCRIPT
 echo >> /app/mackerel-agent/mackerel-agent.conf
